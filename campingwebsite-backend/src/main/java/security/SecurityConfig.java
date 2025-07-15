@@ -16,8 +16,7 @@ public class SecurityConfig {
                         .requestMatchers("/api/auth/**").permitAll()
                         .anyRequest().authenticated()
                 )
-                .csrf(csrf -> csrf.disable()); // ✅ الطريقة الحديثة لتعطيل CSRF
-
+                .csrf(csrf -> csrf.disable());
         return http.build();
     }
 }
