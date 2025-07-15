@@ -3,7 +3,10 @@ package com.campingwebsite.campingwebsite_backend;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {
+		"com.campingwebsite.campingwebsite_backend",
+		"models"
+})
 public class CampingwebsiteBackendApplication {
 
 	public static void main(String[] args) {
