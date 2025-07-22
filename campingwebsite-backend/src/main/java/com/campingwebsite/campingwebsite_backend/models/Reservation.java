@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
 
 import java.time.LocalDate;
 
@@ -21,7 +20,7 @@ public class Reservation {
 
     private double prix;
 
-    private String lieu;
+    private String lieu; // اسم المنطقة أو وصف الموقع
 
     @ManyToOne
     @JoinColumn(name = "client_id")
@@ -29,6 +28,5 @@ public class Reservation {
 
     @ManyToOne
     @JoinColumn(name = "guide_id")
-//    private Guide guide;
-
+    private Guide guide;
 }
