@@ -26,7 +26,7 @@ public class Reservation {
     @JoinColumn(name = "client_id")
     private Client client;
 
-//    @ManyToOne
-//    @JoinColumn(name = "guide_id")
-////    private Guide guide;
+    @ManyToOne
+    @JoinColumn(name = "guide_id")
+    private Guide guide;
 }
