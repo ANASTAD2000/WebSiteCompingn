@@ -1,4 +1,4 @@
-package security;
+package com.campingwebsite.campingwebsite_backend.security;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

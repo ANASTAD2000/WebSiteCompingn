@@ -1,14 +1,15 @@
-package controllers;
+package com.campingwebsite.campingwebsite_backend.controllers;
 
-import dtos.AuthRequest;
-import dtos.AuthResponse;
-import models.Utilisateur;
+
+import com.campingwebsite.campingwebsite_backend.dtos.AuthRequest;
+import com.campingwebsite.campingwebsite_backend.dtos.AuthResponse;
+import com.campingwebsite.campingwebsite_backend.models.Utilisateur;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import repositories.UtilisateurRepository;
-import security.JwtUtil;
+import com.campingwebsite.campingwebsite_backend.repositories.UtilisateurRepository;
+import com.campingwebsite.campingwebsite_backend.security.JwtUtil;
 
 
 @RestController
@@ -21,7 +22,8 @@ public class AuthController {
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody AuthRequest request) {
-        Utilisateur user = utilisateurRepo.findByUsername(request.getUsername());
+//        Utilisateur user = utilisateurRepo.findByUsername(request.getUsername());
+        Utilisateur user =utilisateurRepo.findByUsername(request.getUsername());
 
         if (user != null && user.getPassword().equals(request.getPassword())) {
             String token = jwtUtil.generateToken(user.getUsername());

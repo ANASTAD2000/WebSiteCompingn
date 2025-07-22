@@ -20,7 +20,7 @@ public class Reservation {
 
     private double prix;
 
-    private String lieu; // اسم المنطقة أو وصف الموقع
+    private String lieu;
 
     @ManyToOne
     @JoinColumn(name = "client_id")
